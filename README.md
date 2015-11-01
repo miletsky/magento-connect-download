@@ -1,6 +1,6 @@
 ## Get download link of a Magento extension from MagentoConnect key
 
-A bit modified version of this https://gist.github.com/Narno/2225203
+A bit modified stand alone version of this https://gist.github.com/Narno/2225203
 
 ## Usage
 
