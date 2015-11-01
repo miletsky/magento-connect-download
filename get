@@ -1,0 +1,29 @@
+<?php
+#!/url/local/bin/php
+
+/**
+ * Get download link of a Magento extension from MagentoConnect key
+ *
+ * Dependencies: Zend_Http_Client, Zend_Uri (Zend Framework)
+ */
+require_once 'Narno_Mage_Extension.php';
+
+function uc_words($str, $destSep='/', $srcSep='_') {
+  return str_replace(' ', $destSep, ucwords(str_replace($srcSep, ' ', $str)));
+}
+function __autoload($class) {
+  $classFile = uc_words($class).'.php';
+  include($classFile);
+}
+
+
+// Key of "Magento Downloader" extension
+$key = $_SERVER['argv'][1];
+
+
+// Create connector
+$connect = new Narno_Mage_Extension($key);
+// Define/force statbility
+$connect->setStability('stable');
+// Show link to download package
+echo "\n" . $connect->getDownloadUrl() . "\n\n";
