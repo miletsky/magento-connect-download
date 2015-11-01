@@ -1,5 +1,4 @@
 <?php
-#!/url/local/bin/php
 
 /**
  * Get download link of a Magento extension from MagentoConnect key
